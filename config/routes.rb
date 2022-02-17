@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
   resources :airports
-  root 'airports#index'
+  resources :flights
+
+  root 'flights#index'
 end
