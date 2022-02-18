@@ -1,1 +1,13 @@
 <h1>Flight Booker</h1>
+
+<%= form_with(url: "/flights", method: "get") do %>
+  <%= label_tag(:origin_airport, "Departing From: ")%><br>
+  <%= select_tag(:origin_airport, options_for_select(@airport_options))%><br>
+  <%= label_tag(:destination_airport, "Arriving At: ")%><br>
+  <%= select_tag(:destination_airport, options_for_select(@airport_options))%><br>
+  <%= label_tag(:start, "Date: ") %><br>
+  <%= select_tag(:start, options_for_select(@date_options)) %><br>
+  <%= label_tag(:passengers, "Number of Passengers") %><br>
+  <%= select_tag(:passengers, options_for_select([['1', 1],['2', 2], ['3', 3], ['4', 4]])) %><br>
+  <%= submit_tag "Search Flights" %>
+<% end %>
