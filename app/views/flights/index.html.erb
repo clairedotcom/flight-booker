@@ -20,3 +20,10 @@
   <%= select_tag(:passengers, options_for_select(@passenger_options)) %><br>
   <%= submit_tag "Search Flights" %>
 <% end %>
+
+<% @search_results.each do |f| %>
+  <p><%= f.origin_airport.code %></p><br>
+  <p><%= f.destination_airport.code %></p><br>
+  <p><%= f.start %></p><br>
+  <p><%= f.duration %></p>
+<% end %>
