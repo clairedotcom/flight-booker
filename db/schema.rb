@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2022_02_16_173125) do
     t.integer "origin_airport_id"
     t.integer "destination_airport_id"
     t.datetime "start"
-    t.integer "duration"
+    t.float "duration"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["destination_airport_id"], name: "index_flights_on_destination_airport_id"
