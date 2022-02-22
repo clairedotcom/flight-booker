@@ -1,0 +1,12 @@
+<% if @search_results.empty? %>
+  <p>There are no flights that match your criteria. Please search again.</p>
+<% else %>  
+  <%= form_with(url: "/bookings/new", method: "get") do |f| %>
+    <% @search_results.each do |flight| %>
+      <p><%= flight.origin_airport.code %></p><br>
+      <p><%= flight.destination_airport.code %></p><br>
+      <p><%= flight.start %></p><br>
+      <p><%= flight.duration %></p>
+    <% end %>
+  <% end %>    
+<% end %>

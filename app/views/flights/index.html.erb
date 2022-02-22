@@ -21,9 +21,6 @@
   <%= submit_tag "Search Flights" %>
 <% end %>
 
-<% @search_results.each do |f| %>
-  <p><%= f.origin_airport.code %></p><br>
-  <p><%= f.destination_airport.code %></p><br>
-  <p><%= f.start %></p><br>
-  <p><%= f.duration %></p>
+<% if params.has_key?(:commit) %>
+  <%= render 'results' %>
 <% end %>
