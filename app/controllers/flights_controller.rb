@@ -9,6 +9,6 @@ class FlightsController < ApplicationController
   private
 
   def flight_params
-    params.require(:flight).permit(:origin_airport_id, :destination_airport_id, :start, :duration)
+    params.require(:flight).permit(:origin_airport_id, :destination_airport_id, :departure_date, :departure_time, :duration)
   end
 end

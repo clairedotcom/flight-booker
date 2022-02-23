@@ -1,7 +1,7 @@
 <h1>Flight Booker</h1>
-<% @year_options = Flight.all.map { |f| f.start.year }.uniq %>
-<% @month_options = Flight.all.map { |f| f.start.month }.uniq %>
-<% @day_options = Flight.all.map { |f| f.start.day }.uniq %>
+<% @year_options = Flight.all.map { |f| f.departure_date.year }.uniq %>
+<% @month_options = Flight.all.map { |f| f.departure_date.month }.uniq %>
+<% @day_options = Flight.all.map { |f| f.departure_date.day }.uniq %>
 <% @airport_options = Airport.all.map { |a| [a.code, a.id] } %>
 <% @passenger_options = [['1', 1],['2', 2], ['3', 3], ['4', 4]] %>
 
