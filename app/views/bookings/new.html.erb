@@ -1,2 +1,19 @@
 <h1>New Booking</h1>
 
+<strong>Selected Flight: </strong><br>
+
+<p><%= @flight.departure_date %></p>
+<p><%= @flight.info %></p>
+
+<%= form_with model: @booking, local: true do |f| %>
+  <% params[:passengers].to_i.times do %>  
+    <%= f.fields_for :passengers do |passengers_form| %>
+      <%= passengers_form.label :name %>
+      <%= passengers_form.text_field :name %><br>
+      <%= passengers_form.label :email %>
+      <%= passengers_form.text_field :email %><br>
+    <% end %>
+  <% end %>
+  <%= f.hidden_field(:flight_id, value: params[:flight]) %>
+  <%= f.submit "Book Flight" %>
+<% end %>
