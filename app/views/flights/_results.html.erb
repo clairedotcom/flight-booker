@@ -1,11 +1,12 @@
 <% if @search_results.empty? %>
   <p>There are no flights that match your criteria. Please search again.</p>
-<% else %>  
+<% else %> 
   <%= form_with(url: "/bookings/new", method: "get") do |f| %>
     <% @search_results.each do |flight| %>
-      <%= f.hidden_field(:passengers, params[:passengers]) %>
-      <%= f.radio_button(:booking, "id") %>
-      <%= f.label(:booking_info, flight.info) %><br>
+      <%= f.hidden_field(:passengers, value: params[:passengers]) %>
+      <%= f.radio_button(:flight, flight.id) %>
+      <%= f.label(:flight_info, flight.info) %><br>
+      <%= f.submit "Next" %>
     <% end %>
   <% end %>    
 <% end %>
