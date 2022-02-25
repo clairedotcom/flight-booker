@@ -1,1 +1,9 @@
 <h1>Booking Successful</h1>
+
+<%= @booking.flight.departure_date %><br>
+<%= @booking.flight.info %><br>
+<strong>Passengers: </strong><br>
+<% @booking.passengers.each do |passenger| %>
+  <p><%= passenger.name %></p>
+  <p><%= passenger.email %></p>
+<% end %>
