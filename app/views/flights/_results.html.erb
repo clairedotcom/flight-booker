@@ -6,7 +6,7 @@
       <%= f.hidden_field(:passengers, value: params[:passengers]) %>
       <%= f.radio_button(:flight, flight.id) %>
       <%= f.label(:flight_info, flight.info) %><br>
-      <%= f.submit "Next" %>
+      <%= f.submit "Next", class: "button is-info" %>
     <% end %>
   <% end %>    
 <% end %>

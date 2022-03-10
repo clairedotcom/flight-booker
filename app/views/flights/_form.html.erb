@@ -1,0 +1,27 @@
+
+  <%= form_with(url: "/flights", method: "get") do %>
+    <div class="field">
+      <%= label_tag(:origin_airport, "Departing From", class: "label")%>
+      <%= select_tag(:origin_airport, options_for_select(@airport_options), class: "select")%>
+    </div>
+    <div class="field">
+      <%= label_tag(:destination_airport, "Arriving At", class: "label")%>
+      <%= select_tag(:destination_airport, options_for_select(@airport_options), class: "select")%><br>
+    </div>
+    <div class="field is-grouped-centered">
+      <%= label_tag(:month, "Month", class: "label") %>
+      <%= select_tag(:month, options_for_select(@month_options), class: "select") %>
+      <%= label_tag(:day, "Day", class: "label") %>
+      <%= select_tag(:day, options_for_select(@day_options), class: "select") %>
+      <%= label_tag(:year, "Year", class: "label") %>
+      <%= select_tag(:year, options_for_select(@year_options), class: "select") %>
+    </div>
+    <div class="field">  
+      <%= label_tag(:passengers, "Number of Passengers", class: "label") %>
+      <%= select_tag(:passengers, options_for_select(@passenger_options), class: "select") %><br>
+    </div>
+    <div class="field">        
+      <%= submit_tag "Search Flights", class: "button is-info" %>
+    </div>    
+  <% end %>
+

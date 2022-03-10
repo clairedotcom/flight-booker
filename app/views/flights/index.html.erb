@@ -1,26 +1,17 @@
-<h1>Flight Booker</h1>
+<section class="section">
+<div class="container">
+
 <% @year_options = Flight.all.map { |f| f.departure_date.year }.uniq %>
 <% @month_options = Flight.all.map { |f| f.departure_date.month }.uniq %>
 <% @day_options = Flight.all.map { |f| f.departure_date.day }.uniq %>
 <% @airport_options = Airport.all.map { |a| [a.code, a.id] } %>
 <% @passenger_options = [['1', 1],['2', 2], ['3', 3], ['4', 4]] %>
 
-<%= form_with(url: "/flights", method: "get") do %>
-  <%= label_tag(:origin_airport, "Departing From: ")%><br>
-  <%= select_tag(:origin_airport, options_for_select(@airport_options))%><br>
-  <%= label_tag(:destination_airport, "Arriving At: ")%><br>
-  <%= select_tag(:destination_airport, options_for_select(@airport_options))%><br>
-  <%= label_tag(:year, "Year: ") %>
-  <%= select_tag(:year, options_for_select(@year_options)) %><br>
-  <%= label_tag(:month, "Month: ") %>
-  <%= select_tag(:month, options_for_select(@month_options)) %><br>
-  <%= label_tag(:day, "Day: ") %>
-  <%= select_tag(:day, options_for_select(@day_options)) %><br>
-  <%= label_tag(:passengers, "Number of Passengers") %><br>
-  <%= select_tag(:passengers, options_for_select(@passenger_options)) %><br>
-  <%= submit_tag "Search Flights" %>
-<% end %>
+<%= render 'form' %>
 
 <% if params.has_key?(:commit) %>
   <%= render 'results' %>
 <% end %>
+
+</div>
+</section>

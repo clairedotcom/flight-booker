@@ -7,10 +7,14 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <nav class="navbar is-info has-text-centered">
+      <h1 class="title is-family-sans-serif has-text-white">Flight Booker</h1>
+    </nav>
     <%= yield %>
   </body>
 </html>
