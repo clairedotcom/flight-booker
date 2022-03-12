@@ -3,10 +3,18 @@
 <% else %> 
   <%= form_with(url: "/bookings/new", method: "get") do |f| %>
     <% @search_results.each do |flight| %>
-      <%= f.hidden_field(:passengers, value: params[:passengers]) %>
-      <%= f.radio_button(:flight, flight.id) %>
-      <%= f.label(:flight_info, flight.info) %><br>
-      <%= f.submit "Next", class: "button is-info" %>
+      <div class="level">
+        <div class="level-item">  
+          <div class="control">  
+            <%= f.hidden_field(:passengers, value: params[:passengers]) %>
+            <%= f.radio_button(:flight, flight.id, class: "radio") %>
+            <%= f.label(:flight_info, flight.info, class: "radio") %>
+          </div>
+        </div>
+        <div class="level-item">
+          <%= f.submit "Next", class: "button is-info level-right" %>
+        </div>
+      </div>
     <% end %>
   <% end %>    
 <% end %>
