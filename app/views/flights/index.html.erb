@@ -1,12 +1,5 @@
 <section class="section">
   <div class="container">
-
-<% @year_options = Flight.all.map { |f| f.departure_date.year }.uniq %>
-<% @month_options = Flight.all.map { |f| f.departure_date.month }.uniq %>
-<% @day_options = Flight.all.map { |f| f.departure_date.day }.uniq %>
-<% @airport_options = Airport.all.map { |a| [a.code, a.id] } %>
-<% @passenger_options = [['1', 1],['2', 2], ['3', 3], ['4', 4]] %>
-
     <div class="box">
       <%= render 'form' %>
     </div>    

@@ -1,42 +1,42 @@
 
-  <%= form_with(url: "/flights", method: "get") do %> 
+  <%= form_with(url: "/flights", method: "get") do |form| %> 
       <div class="field is-grouped">
         <div class="control">
           <div class="select">  
-            <%= select_tag(:origin_airport, options_for_select(@airport_options), class: "select", prompt: "Departing From")%>
+            <%= form.select :origin_airport, Airport.options_for_select, class: "select", prompt: "Departing From" %>
           </div>
         </div>
         <div class="control">
           <div class="select">
-            <%= select_tag(:destination_airport, options_for_select(@airport_options), class: "select", prompt: "Arriving To")%><br>
+            <%= form.select:destination_airport, Airport.options_for_select, class: "select", prompt: "Arriving To" %><br>
           </div>
         </div>
         </div>
         <div class="field is-grouped">
           <div class="control">  
             <div class="select">
-              <%= select_tag(:month, options_for_select(@month_options), class: "select", prompt: "Month") %>
+              <%= form.select :month, Flight.month_options, class: "select", prompt: "Month" %>
             </div>
           </div>
           <div class="control">
             <div class="select">  
-              <%= select_tag(:day, options_for_select(@day_options), class: "select", prompt: "Day") %>
+              <%= form.select :day, Flight.day_options, class: "select", prompt: "Day" %>
             </div>
         </div>
         <div class="control">
           <div class="select">
-            <%= select_tag(:year, options_for_select(@year_options), class: "select", prompt: "Year") %>
+            <%= form.select :year, Flight.year_options, class: "select", prompt: "Year" %>
           </div>
         </div>
         </div>
         <div class="field">  
           <div class="control">
             <div class="select">
-              <%= select_tag(:passengers, options_for_select(@passenger_options), class: "select", prompt: "Number of Passengers") %><br>
+              <%= form.select :passengers, [1, 2, 3, 4], class: "select", prompt: "Number of Passengers" %><br>
             </div>
           </div>
         </div>
       <div class="field">        
-        <%= submit_tag "Search Flights", class: "button is-info" %>
+        <%= form.submit "Search Flights", class: "button is-info" %>
       </div>
   <% end %>
