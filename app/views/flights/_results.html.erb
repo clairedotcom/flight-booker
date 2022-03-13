@@ -1,6 +1,7 @@
 <% if @search_results.empty? %>
   <p>There are no flights that match your criteria. Please search again.</p>
-<% else %> 
+<% else %>
+  <h4 class="title is-4">Search Results</h4>
   <%= form_with(url: "/bookings/new", method: "get") do |f| %>
     <% @search_results.each do |flight| %>
       <div class="level">
