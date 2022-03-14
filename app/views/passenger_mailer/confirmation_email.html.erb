@@ -4,6 +4,15 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Email yay!</h1>
+    <h1>Flight Booking Confirmation</h1>
+      <p>Thank you for booking a flight. We hope you have a good trip!</p>
+      <strong>Flight Details</strong>
+      <h3><%= @booking.flight.info %></h3><br>
+      <strong>Passengers</strong><br>
+      <% @booking.passengers.each do |passenger| %>
+        <p> Passenger Name: <%= passenger.name %></p><br>
+        <p> Passenger Email: <%= passenger.email %></p><br>
+        <p>-----------------------</p>
+      <% end %>
   </body>
 </html>

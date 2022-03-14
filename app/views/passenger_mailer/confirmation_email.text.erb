@@ -1,1 +1,13 @@
-Email yay!
+Flight Booking Confirmation
+
+Thank you for booking a flight. We hope you enjoy your trip!
+
+Flight Details
+<%= @booking.flight.info %>
+
+Passengers
+<% @passengers.each do |passenger| %>
+<%= passenger.name %>
+<%= passenger.email %>
+----------------------
+<% end %>

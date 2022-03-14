@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
 
     if @booking.save
       @booking.passengers.each do |passenger|
-        PassengerMailer.with(passenger: passenger).confirmation_email.deliver_now
+        PassengerMailer.with(booking: @booking, passenger: passenger).confirmation_email.deliver_now
       end
 
       redirect_to @booking
