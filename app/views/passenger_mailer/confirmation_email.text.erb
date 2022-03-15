@@ -6,7 +6,7 @@ Flight Details
 <%= @booking.flight.info %>
 
 Passengers
-<% @passengers.each do |passenger| %>
+<% @booking.passengers.each do |passenger| %>
 <%= passenger.name %>
 <%= passenger.email %>
 ----------------------
