@@ -3,36 +3,36 @@
       <div class="field is-grouped">
         <div class="control">
           <div class="select">  
-            <%= form.select :origin_airport, Airport.options_for_select, class: "select", prompt: "Departing From" %>
+            <%= form.select :origin_airport, Airport.options_for_select, class: "select", prompt: "Departing From", selected: params[:origin_airport] %>
           </div>
         </div>
         <div class="control">
           <div class="select">
-            <%= form.select:destination_airport, Airport.options_for_select, class: "select", prompt: "Arriving To" %><br>
+            <%= form.select :destination_airport, Airport.options_for_select, class: "select", prompt: "Arriving To", selected: params[:destination_airport] %><br>
           </div>
         </div>
         </div>
         <div class="field is-grouped">
           <div class="control">  
             <div class="select">
-              <%= form.select :month, Flight.month_options, class: "select", prompt: "Month" %>
+              <%= form.select :month, Flight.month_options, class: "select", prompt: "Month", selected: params[:month] %>
             </div>
           </div>
           <div class="control">
             <div class="select">  
-              <%= form.select :day, Flight.day_options, class: "select", prompt: "Day" %>
+              <%= form.select :day, Flight.day_options, class: "select", prompt: "Day", selected: params[:day] %>
             </div>
         </div>
         <div class="control">
           <div class="select">
-            <%= form.select :year, Flight.year_options, class: "select", prompt: "Year" %>
+            <%= form.select :year, Flight.year_options, class: "select", prompt: "Year", selected: params[:year] %>
           </div>
         </div>
         </div>
         <div class="field">  
           <div class="control">
             <div class="select">
-              <%= form.select :passengers, [1, 2, 3, 4], class: "select", prompt: "Number of Passengers" %><br>
+              <%= form.select :passengers, [1, 2, 3, 4], class: "select", prompt: "Number of Passengers", selected: params[:passengers] %><br>
             </div>
           </div>
         </div>
