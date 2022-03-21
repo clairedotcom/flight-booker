@@ -15,6 +15,10 @@ class Flight < ApplicationRecord
     Flight.all.map { |f| f.departure_date.year }.uniq
   end
 
+  def pretty_departure_date
+    departure_date.strftime("%B %d, %Y")
+  end
+
   def info
     "#{origin_airport.code} #{arrow.encode} #{destination_airport.code}  |  #{departure_time}  |  #{duration.to_f} hours"
   end

@@ -3,13 +3,13 @@
 
   <div class="box">
     <h6 class="title is-6">Flight Details</h6>
-      <%= @booking.flight.departure_date %><br>
+      <%= @booking.flight.pretty_departure_date %><br>
       <%= @booking.flight.info %>
     <div class="field">
     <h6 class="label is-6">Passengers</h6>
     <% @booking.passengers.each do |passenger| %>
       <%= passenger.name %><br>
-      <%= passenger.email %>
+      <%= passenger.email %><br>
     <% end %>
     </div>
   <div>
