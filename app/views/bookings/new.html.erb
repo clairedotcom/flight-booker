@@ -1,25 +1,19 @@
 <section class="section">
+  <%= render 'info' %>
 
-<div class="box">
-  <h3 class="title is-3">New Booking</h3>
-  <strong>Selected Flight</strong><br>
-  <p><%= @flight.pretty_departure_date %></p>
-  <p><%= @flight.info %></p>
-</div>
-
-<div class="box"> 
-  <%= form_with model: @booking, local: true do |f| %>  
-      <%= f.fields_for :passengers do |passengers_form| %>
-        <strong>Passenger Info</strong>
-          <div class="field">
-            <%= passengers_form.text_field :name, class: "input", placeholder: "Name" %>
-          </div>
-          <div class="field">
-            <%= passengers_form.text_field :email, class: "input", placeholder: "Email" %>
-          </div>
-      <% end %>
-  <%= f.hidden_field(:flight_id, value: params[:flight]) %>
-  <%= f.submit "Book Flight", class: "button is-info" %>
-  <% end %>
-</div>
+  <div class="box"> 
+    <%= form_with model: @booking, local: true do |f| %>  
+        <%= f.fields_for :passengers do |passengers_form| %>
+          <strong>Passenger Info</strong>
+            <div class="field">
+              <%= passengers_form.text_field :name, class: "input", placeholder: "Name" %>
+            </div>
+            <div class="field">
+              <%= passengers_form.text_field :email, class: "input", placeholder: "Email" %>
+            </div>
+        <% end %>
+    <%= f.hidden_field(:flight_id, value: params[:flight]) %>
+    <%= f.submit "Book Flight", class: "button is-primary is-light" %>
+    <% end %>
+  </div>
 </section>

@@ -1,16 +1,28 @@
 <section class="section">
-  <h2 class="title is-2">Booking Successful</h2>
-
   <div class="box">
-    <h6 class="title is-6">Flight Details</h6>
-      <%= @booking.flight.pretty_departure_date %><br>
-      <%= @booking.flight.info %>
-    <div class="field">
-    <h6 class="label is-6">Passengers</h6>
-    <% @booking.passengers.each do |passenger| %>
-      <%= passenger.name %><br>
-      <%= passenger.email %><br>
-    <% end %>
+    <div class="panel is-primary">
+      <h2 class="panel-heading has-text-white">Booking Successful</h2>
+      <div class="panel-block">
+        <h6 class="title is-6">Flight Details</h6>
+      </div>
+      <div class="panel-block">
+        <%= @booking.flight.pretty_departure_date %>
+      </div>
+      <div class="panel-block">
+        <%= @booking.flight.info %>
+      </div>
+      <div class="panel-block">
+        <h6 class="label is-6">Passengers</h6>
+      </div>
+      <% @booking.passengers.each do |passenger| %>
+        <div class="panel-block">
+          <%= passenger.name %>
+        </div>
+        <div class="panel-block">
+          <%= passenger.email %>
+        </div>
+      <% end %>
+      </div>
     </div>
   <div>
 </section>

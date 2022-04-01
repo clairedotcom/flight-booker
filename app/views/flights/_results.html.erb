@@ -1,21 +1,23 @@
-<% if @search_results.empty? %>
-  <p>There are no flights that match your criteria. Please search again.</p>
-<% else %>
-  <h4 class="title is-4">Search Results</h4>
-  <%= form_with(url: "/bookings/new", method: "get") do |f| %>
-    <% @search_results.each do |flight| %>
-      <div class="level">
-        <div class="level-item">  
-          <div class="control">  
-            <%= f.hidden_field(:passengers, value: params[:passengers]) %>
-            <%= f.radio_button(:flight, flight.id, class: "radio") %>
-            <%= f.label(:flight_info, flight.info, class: "radio") %>
+<div class="column">
+  <div class="panel is-primary">
+  <h4 class="panel-heading">Search Results</h4>
+    <% if @search_results.empty? %>
+      <p class="panel-block">There are no flights that match your criteria. Please search again.</p>
+    <% else %>
+      <%= form_with(url: "/bookings/new", method: "get") do |f| %>
+        <% @search_results.each do |flight| %>
+          <div class="panel-block">  
+            <div class="control">  
+              <%= f.hidden_field(:passengers, value: params[:passengers]) %>
+              <%= f.radio_button(:flight, flight.id, class: "radio") %>
+              <%= f.label(:flight_info, flight.info, class: "radio") %>
+            </div>
           </div>
-        </div>
-        <div class="level-item">
-          <%= f.submit "Next", class: "button is-info level-right" %>
-        </div>
-      </div>
+          <div class="panel-block">
+            <%= f.submit "Next", class: "button is-primary is-light is-fullwidth" %>
+          </div>
+        <% end %>
+      <% end %>    
     <% end %>
-  <% end %>    
-<% end %>
+  </div>
+</div>

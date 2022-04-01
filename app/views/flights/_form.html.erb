@@ -1,5 +1,9 @@
-<h4 class="title is-4">Search Flights</h4>
+<div class="column">
+  <div class="panel is-primary">
+  <h4 class="panel-heading">Search Flights</h4>
+
   <%= form_with(url: "/flights", method: "get") do |form| %> 
+    <div class="panel-block">
       <div class="field is-grouped">
         <div class="control">
           <div class="select">  
@@ -8,35 +12,42 @@
         </div>
         <div class="control">
           <div class="select">
-            <%= form.select :destination_airport, Airport.options_for_select, class: "select", prompt: "Arriving To", selected: params[:destination_airport] %><br>
+            <%= form.select :destination_airport, Airport.options_for_select, class: "select", prompt: "Arriving To", selected: params[:destination_airport] %>
           </div>
         </div>
-        </div>
-        <div class="field is-grouped">
-          <div class="control">  
-            <div class="select">
-              <%= form.select :month, Flight.month_options, class: "select", prompt: "Month", selected: params[:month] %>
-            </div>
+      </div>
+    </div>
+    <div class="panel-block">
+      <div class="field is-grouped">
+        <div class="control">  
+          <div class="select">
+            <%= form.select :month, Flight.month_options, class: "select", prompt: "Month", selected: params[:month] %>
           </div>
-          <div class="control">
-            <div class="select">  
-              <%= form.select :day, Flight.day_options, class: "select", prompt: "Day", selected: params[:day] %>
-            </div>
+        </div>
+        <div class="control">
+          <div class="select">  
+            <%= form.select :day, Flight.day_options, class: "select", prompt: "Day", selected: params[:day] %>
+          </div>
         </div>
         <div class="control">
           <div class="select">
             <%= form.select :year, Flight.year_options, class: "select", prompt: "Year", selected: params[:year] %>
           </div>
         </div>
-        </div>
-        <div class="field">  
-          <div class="control">
-            <div class="select">
-              <%= form.select :passengers, [1, 2, 3, 4], class: "select", prompt: "Number of Passengers", selected: params[:passengers] %><br>
-            </div>
+      </div>
+    </div>
+    <div class="panel-block">
+      <div class="field">
+        <div class="control">
+          <div class="select">
+            <%= form.select :passengers, [1, 2, 3, 4], class: "select", prompt: "Number of Passengers", selected: params[:passengers] %>
           </div>
         </div>
-      <div class="field">        
-        <%= form.submit "Search Flights", class: "button is-info" %>
       </div>
+    </div>
+    <div class="panel-block">
+      <%= form.submit "Search Flights", class: "button is-primary is-light is-fullwidth" %>
+    </div>
   <% end %>
+  </div>
+</div>

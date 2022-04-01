@@ -12,12 +12,12 @@
   </head>
 
   <body>
-    <nav class="navbar is-info">
-      
-        <a class="navbar-item has-text-centered is-tab" href="<%= root_path %>">  
-          <h1 class="title is-family-sans-serif has-text-white">Flight Booker</h1>
-        </a>
-      
+    <nav class="navbar is-primary">
+      <div class="navbar-brand">   
+        <%= link_to root_path, class: "navbar-item" do %>
+          <h1 class="title has-text-white">Flight Booker</h1>
+        <% end %>
+      </div>
     </nav>
     <%= yield %>
   </body>

@@ -1,11 +1,9 @@
 <section class="section">
   <div class="container">
-    <div class="box">
-      <%= render 'form' %>
-    </div>    
-    <% if params.has_key?(:commit) %>
-      <div class="box">
-      <%= render 'results' %>
-    <% end %>
+    <div class="columns">
+      <%= render 'form' %>   
+      <% if params.has_key?(:commit) %>
+        <%= render 'results' %>
+      <% end %>
   </div>
 </section>
