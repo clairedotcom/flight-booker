@@ -4,19 +4,19 @@ class Flight < ApplicationRecord
   has_many :bookings
 
   def self.month_options
-    Flight.all.map { |f| f.departure_date.month }.uniq
+    all.map { |f| f.departure_date.month }.uniq
   end
 
   def self.day_options
-    Flight.all.map { |f| f.departure_date.day }.uniq
+    all.map { |f| f.departure_date.day }.uniq
   end
 
   def self.year_options
-    Flight.all.map { |f| f.departure_date.year }.uniq
+    all.map { |f| f.departure_date.year }.uniq
   end
 
   def pretty_departure_date
-    departure_date.strftime("%B %d, %Y")
+    departure_date.strftime('%B %d, %Y')
   end
 
   def info
@@ -27,4 +27,3 @@ class Flight < ApplicationRecord
     "\u2794"
   end
 end
-

@@ -19,6 +19,11 @@
         <% end %>
       </div>
     </nav>
+    <div class="notification is-danger">
+      <% if flash[:alert] %>
+        <%= alert %>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>
